@@ -37,16 +37,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                startActivity(new Intent( MainActivity.this,MaterialUpConceptActivity.class));
+                startActivity(new Intent(MainActivity.this, MaterialUpConceptActivity.class));
             }
         });
+
+
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        pagerAdapter = new SimplePagerAdapter(getSupportFragmentManager(), this);
-        mViewPager.setAdapter(pagerAdapter);
+        if (mViewPager != null) {
+            setupViewPager(mViewPager);
+        }
+
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+    }
+
+    private void setupViewPager(ViewPager viewpager) {
+        pagerAdapter = new SimplePagerAdapter(getSupportFragmentManager());
+        pagerAdapter.addFragment(new ListFragment(), "Tab 1");
+        pagerAdapter.addFragment(new ListFragment(), "Tab 2");
+        pagerAdapter.addFragment(new ListFragment(), "Tab 3");
+        mViewPager.setAdapter(pagerAdapter);
     }
 
     @Override
