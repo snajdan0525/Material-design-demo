@@ -18,8 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MaterialUpConceptActivity"
-            android:label="Sakúla sNalopainen"/>
+        <activity
+            android:name=".MaterialUpConceptActivity"
+            android:label="Sakúla sNalopainen" />
+        <activity
+            android:theme="@style/Theme.DesignDemo"
+            android:name=".CountryDisplayActivity"
+            android:label="Sakúla sNalopainen" />
     </application>
 
 </manifest>

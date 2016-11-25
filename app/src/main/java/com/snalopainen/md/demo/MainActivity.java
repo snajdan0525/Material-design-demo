@@ -76,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
+
                         mDrawerLayout.closeDrawers();
+                        startActivity(new Intent(MainActivity.this, CountryDisplayActivity.class));
                         return true;
                     }
                 });
@@ -84,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewpager) {
         pagerAdapter = new SimplePagerAdapter(getSupportFragmentManager());
-        pagerAdapter.addFragment(new ListFragment(), "Tab 1");
-        pagerAdapter.addFragment(new ListFragment(), "Tab 2");
-        pagerAdapter.addFragment(new ListFragment(), "Tab 3");
-        mViewPager.setAdapter(pagerAdapter);
+        pagerAdapter.addFragment(new RecyleViewFragment(), "Tab 1");
+        pagerAdapter.addFragment(new RecyleViewFragment(), "Tab 2");
+        pagerAdapter.addFragment(new RecyleViewFragment(), "Tab 3");
+        viewpager.setAdapter(pagerAdapter);
     }
 
     @Override

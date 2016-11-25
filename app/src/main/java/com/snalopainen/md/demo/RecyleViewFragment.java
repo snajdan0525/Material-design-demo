@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class ListFragment extends Fragment {
+public class RecyleViewFragment extends Fragment {
     private  final String[] sCheeseStrings = {
             "Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
             "Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale",
@@ -191,7 +191,7 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         RecyclerView rv = (RecyclerView) inflater.inflate(
-                R.layout.fragment_list, container, false);
+                R.layout.fragment_recycleview, container, false);
         setupRecyclerView(rv);
         return rv;
     }
@@ -251,7 +251,7 @@ public class ListFragment extends Fragment {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.list_item, parent, false);
+                    .inflate(R.layout.circleimage_list_item, parent, false);
             view.setBackgroundResource(mBackground);
             return new ViewHolder(view);
         }
